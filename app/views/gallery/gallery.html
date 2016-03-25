@@ -1,0 +1,54 @@
+<button type="text" class="btn btn-light-green" ng-click="add = !add">Add Painting To Gallery/Hide Option To Add to Gallery</button>
+<button type="text" class="btn btn-light-green" ng-click="paintings = !paintings">View/Hide Gallery</button>
+
+<section ng-if="add" class="container-fluid">
+    <div class="col-sm-5 add-painting-card">
+        <form ng-submit="addToGallery(newPainting); clear()" class="border">
+            <div class="form-group">
+                <label>Painting URL</label>
+                <input ng-model="newPainting.img" type="url" class="form-control" placeholder="URL of Painting Image">
+            </div>
+            <div class="form-group">
+                <label>Artist</label>
+                <input ng-model="newPainting.artist" type="text" class="form-control" placeholder="Artist Name">
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input ng-model="newPainting.title" type="text" class="form-control" placeholder="Painting Title">
+            </div>
+            <button type="submit" class="btn btn-teal">Add to Gallery</button>
+            <button type="reset" class="btn btn-purple">Clear</button>
+        </form>
+    </div>
+    
+    <div class="col-sm-6 view-painting-card" ng-hide="!newPainting">
+        <img ng-hide="!newPainting.img" class="img" height="300" ng-src="{{newPainting.img}}" alt="picture goes here">
+        <div>
+            <h2 ng-hide="!newPainting.artist">{{newPainting.artist}}</h2>
+            <h3 ng-hide="!newPainting.title">{{newPainting.title}}</h3>
+        </div>
+    </div>
+</section>
+
+<section ng-if="paintings" class="container-fluid gallery-card">
+    <div class="row text-center">
+        <div class="col-sm-12 pagination-centered">
+            <div class="col-sm-4 card" ng-repeat="picture in gallery track by $index">
+                <img ng-src="{{picture.img}}" height="150">
+                    <span ng-show="edit"><input ng-model="picture.img"></input></span>
+                </img>
+                <h4>
+                    <span ng-hide="edit">{{picture.artist}}</span>
+                    <span ng-show="edit"><input ng-model="picture.artist"></input></span>
+                </h4>
+                <h5>
+                    <span ng-hide="edit">{{picture.title}}</span>
+                    <span ng-show="edit"><input ng-model="picture.title"></input></span>
+                </h5> 
+                <button class="btn btn-teal" ng-click="delete($index, picture)">Delete From Gallery</button>
+                <button class="btn btn-purple" ng-hide="edit" ng-click="edit = !edit">Edit</button>
+                <button ng-show="edit" class="btn btn-purple" ng-click="update(picture); edit = !edit">Accept Changes</button>
+            </div>
+        </div>
+    </div>
+</section>

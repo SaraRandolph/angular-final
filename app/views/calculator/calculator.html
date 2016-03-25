@@ -1,0 +1,58 @@
+<section class="container-fluid">
+    <h1>Math Machine</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!--section 1-->
+            <div class="panel panel-default  col-sm-4">
+                <div class="panel-body">
+                    <h3>Type your first number here:</h3>
+                    <input ng-model="firstNum" type="number">
+                </div>
+            </div>
+            <!--section 2-->
+            <div class="panel panel-default  col-sm-4">
+                <div class="panel-body">
+                    <h3>Type your second number here:</h3>
+                    <input ng-model="secondNum" type="number">
+                </div>
+            </div>
+            <!--section 3-->
+            <div class="panel panel-default  col-sm-4">
+                <div class="panel-body">
+                    <div class="media">
+                        <h3>Would you like these numbers added, subtracted, multiplied or divided?? Click one!</h3>
+                        <div class="media-left media-middle">
+                                <img class="media-object" src="https://hunterfreeman.files.wordpress.com/2011/04/plus-sign-22.jpg?w=900" alt="plus" height="70px" ng-click="add(firstNum, secondNum)">
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                                <img class="media-object" src="https://image.freepik.com/free-icon/subtract--ios-7-symbol_318-38866.png" alt="subtraction" height="70px" ng-click="subtract(firstNum, secondNum)">
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                                <img class="media-object" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Multiplication_Sign.svg/2000px-Multiplication_Sign.svg.png" alt="multiply" height="70px" ng-click="multiply(firstNum, secondNum)">
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                                <img class="media-object" src="http://www.wolfescience.com/byojeopardy/userfiles/images/8366kitkat/divison%20sign.jpg" alt="division" height="70px" ng-click="divide(firstNum, secondNum)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="big-font">The result is: {{result}}</span>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Past queries</h3>
+        </div>
+        <div class="panel-body col-sm-3" ng-repeat="result in calculations">
+            <p>{{result.$value}}   <span class="badge badge-custom" ng-click="delete(result)">X</p>
+        </div>
+    </div>
+</section>

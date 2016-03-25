@@ -1,0 +1,99 @@
+/*body{
+    background-color:#f3f2ee !important
+}*/
+.card{
+    height: 300px;
+}
+
+.purple{
+
+    background-color:#5B5FA6;
+}
+
+.blue{
+
+    background-color:#0583F2
+}
+
+.light-green{
+
+    background-color:#4EBFBF
+}
+
+.teal{
+    background-color:#1B8C6C
+}
+
+.white{
+    color:white;
+
+}
+
+.navbar-custom a{
+    color:white
+}
+
+.nav>li:hover{
+    color:#1B8C6C
+}
+
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 50px; 
+    line-height: normal;
+    border-radius: 5px;
+    background-color: #4EBFBF;
+    color:white;
+    margin-bottom:10px
+}
+
+.add-painting-card{
+    margin-top: 50px;
+    margin-right: 5px;
+    border: 1px solid darkgrey;
+    background-color:#f3f2ee;
+}
+
+.view-painting-card{
+    margin-top: 50px;
+    margin-right: 5px;
+    border: 1px solid darkgrey;
+    background-color:#f3f2ee;
+}
+
+.gallery-card{
+    margin-top: 50px;
+}
+
+.btn-light-green{
+    color: white;
+    background-color:#4EBFBF
+}
+
+.btn-teal{
+    color: white;
+    background-color:#1B8C6C
+}
+
+.btn-blue{
+    color: white;
+    background-color:#0583F2
+}
+
+.btn-purple{
+    color: white;
+    background-color:#5B5FA6
+}
+
+.big-font{
+    font-size:7em
+}
+
+.panel-default>.panel-heading {
+    background-color:#4EBFBF !important;
+    color: white !important
+}
+
+.badge-custom{
+    background-color:#5B5FA6 !important;
+}
